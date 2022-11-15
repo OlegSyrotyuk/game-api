@@ -1,10 +1,8 @@
 package net.villenium.game.api.command;
 
-import net.villenium.game.api.user.permission.PermissionGroup;
 import org.bukkit.command.CommandSender;
 
-@Command(name = "test")
-@Group(group = PermissionGroup.ADMINISTRATOR)
+@Command("test")
 public class TestCommand {
 
     @CommandHandler
@@ -13,8 +11,7 @@ public class TestCommand {
         System.out.println("Age: " + age);
     }
 
-    @Subcommand(name = "pizda1")
-    @Group(group = PermissionGroup.HEAD_ADMIN)
+    @Subcommand("pizda1")
     public void handlePizda1Subcommand(CommandSender sender, String[] args) {
 
     }

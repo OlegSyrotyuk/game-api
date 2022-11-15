@@ -6,6 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Aliases {
 
-    String[] aliases();
+    String[] value();
 
 }

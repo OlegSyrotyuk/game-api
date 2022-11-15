@@ -13,9 +13,8 @@ public enum PermissionGroup {
     HELPER(8, "&a&lМл. Модератор", "&a&lJr. MOD ", '4'),
     MODERATOR(9, "&a&lМодератор", "&a&lMOD", '3'),
     DEVELOPER(10, "&9&lРазработчик", "&9&lDEV ", '2'),
-    ADMINISTRATOR(50, "&4&lАдминистратор", "&c&lHEAD ADM ", '1'),
+    ADMINISTRATOR(50, "&4&lАдминистратор", "&c&lADM ", '1'),
     HEAD_ADMIN(100, "&4&lГл. Администратор", "&4&lHEAD ADM ", '0');
-    //CONSOLE(1000, "&4&lБожество", "&4&l", '0');
 
     private final int rank;
     private final String name;
