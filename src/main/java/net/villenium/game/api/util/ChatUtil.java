@@ -1,6 +1,8 @@
 package net.villenium.game.api.util;
 
-public interface ChatUtil {
+import org.bukkit.ChatColor;
+
+public class ChatUtil {
 
     /**
      * Получить правильное слагательное наклонение в зависимости от количества.
@@ -11,7 +13,7 @@ public interface ChatUtil {
      * @param many наклонение для многих (убийств).
      * @return правильное слагательное наклонение в зависимости от количества.
      */
-    default String transformByCount(int amount, String uno, String duo, String many) {
+    public static String transformByCount(int amount, String uno, String duo, String many) {
         int mod10 = amount % 10, mod100 = amount % 100;
         if (mod10 == 1 && mod100 != 11) {
             return uno;
@@ -22,15 +24,19 @@ public interface ChatUtil {
         return many;
     }
 
-    String colorize(String message);
+    public static String colorize(String message) {
+        return ChatColor.translateAlternateColorCodes('&', message);
+    }
 
-    default String colorize(String message, Object... args) {
+    public static String colorize(String message, Object... args) {
         return colorize(String.format(message, args));
     }
 
-    String prefixed(String prefix, String message);
+    public static String prefixed(String prefix, String message) {
+        return colorize("&e&l%s &8> %s", prefix, message);
+    }
 
-    default String prefixed(String prefix, String message, Object... args) {
+    public static String prefixed(String prefix, String message, Object... args) {
         return prefixed(prefix, String.format(message, args));
     }
 

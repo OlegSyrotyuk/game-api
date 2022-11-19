@@ -22,8 +22,6 @@ public class GameApi {
     private static Bar BAR_MANAGER;
     private static UserManager USER_MANAGER;
     private static CommandManager COMMAND_MANAGER;
-    private static ChatUtil CHAT_UTIL;
-
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
     }
@@ -45,7 +43,6 @@ public class GameApi {
         return ENTITY_LOGIC_HELPER;
     }
 
-    @NotImplement
     public static Title getTitleManager() {
         return TITLE_MANAGER;
     }
@@ -57,10 +54,6 @@ public class GameApi {
     @NotImplement
     public static Bar getBarManager() {
         return BAR_MANAGER;
-    }
-
-    public static ChatUtil getChatUtil() {
-        return CHAT_UTIL;
     }
 
     public static UserManager getUserManager() {

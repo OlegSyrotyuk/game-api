@@ -41,6 +41,14 @@ public interface UserPermission {
      * @see UserPermission#hasGroup(PermissionGroup)
      * @return наличие группы.
      */
+    default boolean isUnique() {
+        return hasGroup(PermissionGroup.UNIQUE);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
     default boolean isBuilder() {
         return hasGroup(PermissionGroup.BUILDER);
     }
