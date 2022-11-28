@@ -39,6 +39,18 @@ public interface User {
     UserPermission getPermission();
 
     /**
+     * Получить класс для работы с персонализацией.
+     * @return персонализация игрока.
+     */
+    UserPersonalization getPersonalization();
+
+    /**
+     * Получить класс для работы с настройками.
+     * @return настройки игрока.
+     */
+    UserSettings getSettings();
+
+    /**
      * Получить время первого входа игрока на проект.
      * @return время.
      */
@@ -68,12 +80,6 @@ public interface User {
      * @return визуальное имя.
      */
     String getDisplayName();
-
-    /**
-     * Получить суффикс игрока.
-     * @return суффикс игрока или null.
-     */
-    String getSuffix();
 
     /**
      * Получить spigot-объект игрока.

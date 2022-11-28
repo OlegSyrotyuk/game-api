@@ -3,12 +3,13 @@ package net.villenium.game.api;
 import net.villenium.game.api.annotation.NotImplement;
 import net.villenium.game.api.bar.Bar;
 import net.villenium.game.api.command.CommandManager;
+import net.villenium.game.api.economy.Economy;
 import net.villenium.game.api.entity.logic.EntityLogicBuilder;
 import net.villenium.game.api.entity.logic.EntityLogicHelper;
+import net.villenium.game.api.minigame.MinigameSettings;
 import net.villenium.game.api.phantom.entity.PhantomEntityFactory;
 import net.villenium.game.api.tab.Tab;
 import net.villenium.game.api.user.UserManager;
-import net.villenium.game.api.util.ChatUtil;
 
 public class GameApi {
 
@@ -22,6 +23,8 @@ public class GameApi {
     private static Bar BAR_MANAGER;
     private static UserManager USER_MANAGER;
     private static CommandManager COMMAND_MANAGER;
+    private static MinigameSettings MINIGAME_SETTINGS;
+    private static Economy ECONOMY;
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
     }
@@ -62,5 +65,13 @@ public class GameApi {
 
     public static CommandManager getCommandManager() {
         return COMMAND_MANAGER;
+    }
+
+    public static MinigameSettings getMinigameSettings() {
+        return MINIGAME_SETTINGS;
+    }
+
+    public static Economy getEconomy() {
+        return ECONOMY;
     }
 }
