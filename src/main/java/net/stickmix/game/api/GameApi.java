@@ -6,6 +6,7 @@ import net.stickmix.game.api.command.CommandManager;
 import net.stickmix.game.api.economy.Economy;
 import net.stickmix.game.api.entity.logic.EntityLogicBuilder;
 import net.stickmix.game.api.entity.logic.EntityLogicHelper;
+import net.stickmix.game.api.menu.MenuUtil;
 import net.stickmix.game.api.minigame.MinigameSettings;
 import net.stickmix.game.api.phantom.entity.PhantomEntityFactory;
 import net.stickmix.game.api.tab.Tab;
@@ -15,7 +16,7 @@ public class GameApi {
 
     private static PhantomEntityFactory PHANTOM_ENTITY_FACTORY;
     private static Notification NOTIFICATION_MANAGER;
-    private static ScoreBoard SCOREBOARD_MANAGER;
+    private static ScoreBoardUtil SCOREBOARD_UTIL;
     private static EntityLogicBuilder ENTITY_LOGIC_BUILDER;
     private static EntityLogicHelper ENTITY_LOGIC_HELPER;
     private static Title TITLE_MANAGER;
@@ -24,7 +25,8 @@ public class GameApi {
     private static UserManager USER_MANAGER;
     private static CommandManager COMMAND_MANAGER;
     private static MinigameSettings MINIGAME_SETTINGS;
-    private static Economy ECONOMY;
+    private static Economy ECONOMY_UTIL;
+    private static MenuUtil MENU_UTIL;
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
     }
@@ -33,9 +35,8 @@ public class GameApi {
         return NOTIFICATION_MANAGER;
     }
 
-    @NotImplement
-    public static ScoreBoard getScoreboardManager() {
-        return SCOREBOARD_MANAGER;
+    public static ScoreBoardUtil getScoreboardUtil() {
+        return SCOREBOARD_UTIL;
     }
 
     public static EntityLogicBuilder getEntityLogicBuilder() {
@@ -67,11 +68,17 @@ public class GameApi {
         return COMMAND_MANAGER;
     }
 
+    @NotImplement
     public static MinigameSettings getMinigameSettings() {
         return MINIGAME_SETTINGS;
     }
 
-    public static Economy getEconomy() {
-        return ECONOMY;
+    @NotImplement
+    public static Economy getEconomyUtil() {
+        return ECONOMY_UTIL;
+    }
+
+    public static MenuUtil getMenuUtil() {
+        return MENU_UTIL;
     }
 }

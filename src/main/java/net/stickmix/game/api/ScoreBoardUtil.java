@@ -1,12 +1,13 @@
 package net.stickmix.game.api;
 
+import lombok.AllArgsConstructor;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public interface ScoreBoard {
+public interface ScoreBoardUtil {
 
     /**
      * Включить на постоянной основе авто-обновление названия скорборда с указанной гаммой анимации.
@@ -132,12 +133,16 @@ public interface ScoreBoard {
      */
     void removeAll(Collection<Player> players);
 
+    @AllArgsConstructor
     enum AnimationGamma {
-        GOLD,
-        AQUA,
-        PURPLE,
-        RED,
-        GREEN
+
+        GOLD("&f", "&e", "&6"),
+        AQUA("&f", "&b", "&3"),
+        PURPLE("&f", "&d", "&5"),
+        RED("&f", "&c", "&c"),
+        GREEN("&f", "&a", "&2");
+
+        public final String cc1, cc2, cc3;
     }
 
 }
