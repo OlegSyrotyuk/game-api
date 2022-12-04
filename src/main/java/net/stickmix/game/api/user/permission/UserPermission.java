@@ -88,7 +88,7 @@ public interface UserPermission {
      * @return наличие группы.
      */
     default boolean isCuratorBuilder() {
-        return isOwner() || hasGroup(PermissionGroup.ADMINISTRATOR) && hasGroup(PermissionGroup.BUILDER);
+        return hasGroup(PermissionGroup.ADMINISTRATOR) && hasGroup(PermissionGroup.BUILDER);
     }
 
     /**
@@ -96,7 +96,7 @@ public interface UserPermission {
      * @return наличие группы.
      */
     default boolean isCuratorModerator() {
-        return isOwner() || hasGroup(PermissionGroup.ADMINISTRATOR) && hasGroup(PermissionGroup.MODERATOR);
+        return hasGroup(PermissionGroup.ADMINISTRATOR) && hasGroup(PermissionGroup.MODERATOR);
     }
 
     /**
