@@ -14,4 +14,18 @@ public interface UserManager {
     default User get(Player player) {
         return get(player.getName());
     }
+
+    /**
+     * Удалить пользователя из кэша если он оффлайн на этом сервере.
+     * @param name имя пользователя.
+     */
+    void invalidateIfOffline(String name);
+
+    default void invalidateIfOffline(Player player) {
+        invalidateIfOffline(player.getName());
+    }
+
+    default void invalidateIfOffline(User user) {
+        invalidateIfOffline(user.getName());
+    }
 }

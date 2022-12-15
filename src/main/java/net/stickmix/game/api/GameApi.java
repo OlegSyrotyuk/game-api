@@ -1,6 +1,7 @@
 package net.stickmix.game.api;
 
 import net.stickmix.game.api.annotation.NotImplement;
+import net.stickmix.game.api.athena.StorageManager;
 import net.stickmix.game.api.bar.Bar;
 import net.stickmix.game.api.command.CommandManager;
 import net.stickmix.game.api.economy.Economy;
@@ -9,6 +10,7 @@ import net.stickmix.game.api.entity.logic.EntityLogicHelper;
 import net.stickmix.game.api.menu.MenuUtil;
 import net.stickmix.game.api.minigame.MinigameSettings;
 import net.stickmix.game.api.phantom.entity.PhantomEntityFactory;
+import net.stickmix.game.api.realm.RealmManager;
 import net.stickmix.game.api.tab.Tab;
 import net.stickmix.game.api.user.UserManager;
 
@@ -16,6 +18,7 @@ public class GameApi {
 
     private static PhantomEntityFactory PHANTOM_ENTITY_FACTORY;
     private static Notification NOTIFICATION_MANAGER;
+    private static StorageManager STORAGE_MANAGER;
     private static ScoreBoardUtil SCOREBOARD_UTIL;
     private static EntityLogicBuilder ENTITY_LOGIC_BUILDER;
     private static EntityLogicHelper ENTITY_LOGIC_HELPER;
@@ -27,6 +30,7 @@ public class GameApi {
     private static MinigameSettings MINIGAME_SETTINGS;
     private static Economy ECONOMY_UTIL;
     private static MenuUtil MENU_UTIL;
+    private static RealmManager REALM_MANAGER;
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
     }
@@ -80,5 +84,13 @@ public class GameApi {
 
     public static MenuUtil getMenuUtil() {
         return MENU_UTIL;
+    }
+
+    public static StorageManager getStorageManager() {
+        return STORAGE_MANAGER;
+    }
+
+    public static RealmManager getRealmManager() {
+        return REALM_MANAGER;
     }
 }

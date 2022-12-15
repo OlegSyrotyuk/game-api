@@ -31,8 +31,72 @@ public interface UserPermission {
      * @see UserPermission#hasGroup(PermissionGroup)
      * @return наличие группы.
      */
-    default boolean isYouTube() {
-        return hasGroup(PermissionGroup.YOUTUBE);
+    default boolean isVip() {
+        return isAdministrator() || hasGroup(PermissionGroup.VIP);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isVipPlus() {
+        return isAdministrator() || hasGroup(PermissionGroup.VIP_PLUS);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isPremium() {
+        return isAdministrator() || hasGroup(PermissionGroup.PREMIUM);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isPremiumPlus() {
+        return isAdministrator() || hasGroup(PermissionGroup.PREMIUM_PLUS);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isRich() {
+        return isAdministrator() || hasGroup(PermissionGroup.RICH);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isRichPlus() {
+        return isAdministrator() || hasGroup(PermissionGroup.RICH_PLUS);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isSponsor() {
+        return isAdministrator() || hasGroup(PermissionGroup.SPONSOR);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isSponsorPlus() {
+        return isAdministrator() || hasGroup(PermissionGroup.SPONSOR_PLUS);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isMedia() {
+        return isAdministrator() || hasGroup(PermissionGroup.MEDIA);
     }
 
     /**
@@ -40,7 +104,7 @@ public interface UserPermission {
      * @return наличие группы.
      */
     default boolean isUnique() {
-        return hasGroup(PermissionGroup.UNIQUE);
+        return isAdministrator() || hasGroup(PermissionGroup.UNIQUE);
     }
 
     /**
@@ -48,7 +112,15 @@ public interface UserPermission {
      * @return наличие группы.
      */
     default boolean isBuilder() {
-        return hasGroup(PermissionGroup.BUILDER);
+        return isSrBuilder() || hasGroup(PermissionGroup.BUILDER);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isSrBuilder() {
+        return isCuratorBuilder() || hasGroup(PermissionGroup.SENIOR_BUILDER);
     }
 
     /**
@@ -56,7 +128,7 @@ public interface UserPermission {
      * @return наличие группы.
      */
     default boolean isJrModerator() {
-        return isModerator() && hasGroup(PermissionGroup.HELPER);
+        return isModerator() || hasGroup(PermissionGroup.HELPER);
     }
 
     /**
@@ -65,6 +137,14 @@ public interface UserPermission {
      */
     default boolean isModerator() {
         return isAdministrator() || hasGroup(PermissionGroup.MODERATOR);
+    }
+
+    /**
+     * @see UserPermission#hasGroup(PermissionGroup)
+     * @return наличие группы.
+     */
+    default boolean isSrModerator() {
+        return hasGroup(PermissionGroup.SENIOR_MODERATOR);
     }
 
     /**

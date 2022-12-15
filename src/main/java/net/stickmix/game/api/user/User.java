@@ -1,5 +1,6 @@
 package net.stickmix.game.api.user;
 
+import net.stickmix.game.api.realm.Realm;
 import net.stickmix.game.api.user.permission.PermissionGroup;
 import net.stickmix.game.api.user.permission.UserPermission;
 import org.bukkit.entity.Player;
@@ -24,7 +25,7 @@ public interface User {
      * Получить сервер игрока.
      * @return сервер игрока.
      */
-    String getServer();
+    Realm getRealm();
 
     /**
      * Получить группы игрока.
