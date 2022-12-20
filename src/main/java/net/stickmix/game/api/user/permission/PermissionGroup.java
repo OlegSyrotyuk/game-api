@@ -18,7 +18,7 @@ public enum PermissionGroup {
     SPONSOR_PLUS(9, "&6&lSPONSOR+", "&6&lSPONSOR+ ", '7'),
     UNIQUE(10, "&d&lУникальный", "&d&lUNIQUE ", '6'),
     MEDIA(30, "&c&lМедиа личность", "&c&lMEDIA ", '6'),
-    SPECIAL(35, "&5&lСпец. персона", "&5&lSPECIAL ", '1'),
+    SPECIAL(34, "&5&lСпец. персона", "&5&lSPECIAL ", '1'),
     BUILDER(35, "&e&lСтроитель", "&e&lBUILD ", '5'),
     SENIOR_BUILDER(36, "&e&lСт. Строитель", "&e&lSr. BUILD ", '4'),
     HELPER(38, "&a&lМл. Модератор", "&a&lJr. MOD ", '5'),

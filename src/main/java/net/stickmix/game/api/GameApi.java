@@ -59,7 +59,6 @@ public class GameApi {
         return TAB_MANAGER;
     }
 
-    @NotImplement
     public static Bar getBarManager() {
         return BAR_MANAGER;
     }

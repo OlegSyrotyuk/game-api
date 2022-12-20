@@ -88,4 +88,10 @@ public interface User {
      */
     Player getSpigotPlayer();
 
+    /**
+     * Проверить является ли пользователь онлайн на проекте.
+     * @return true если пользователь находится на любом сервере проекта.
+     */
+    boolean isOnline();
+
 }
