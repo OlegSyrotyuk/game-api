@@ -54,4 +54,11 @@ public interface Party {
      */
     int getMaxMemberCount();
 
+    /**
+     * Отправить сообщение всем участникам тусовки.
+     * @param message сообщение.
+     * @param args аргументы к сообщению.
+     */
+    void sendPartyMessage(String message, Object... args);
+
 }
