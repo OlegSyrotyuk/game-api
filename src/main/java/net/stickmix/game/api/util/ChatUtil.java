@@ -40,4 +40,10 @@ public class ChatUtil {
         return prefixed(prefix, String.format(message, args));
     }
 
+    public static String getBooleanString(boolean yes, String trueText, String falseText) {
+        String color = yes ? "&a" : "&c";
+        String message = yes ? trueText : falseText;
+        return color + message;
+    }
+
 }

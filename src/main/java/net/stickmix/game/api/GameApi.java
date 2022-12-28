@@ -9,6 +9,7 @@ import net.stickmix.game.api.entity.logic.EntityLogicBuilder;
 import net.stickmix.game.api.entity.logic.EntityLogicHelper;
 import net.stickmix.game.api.menu.MenuUtil;
 import net.stickmix.game.api.minigame.MinigameSettings;
+import net.stickmix.game.api.party.PartyManager;
 import net.stickmix.game.api.phantom.entity.PhantomEntityFactory;
 import net.stickmix.game.api.realm.RealmManager;
 import net.stickmix.game.api.tab.Tab;
@@ -31,6 +32,8 @@ public class GameApi {
     private static Economy ECONOMY_UTIL;
     private static MenuUtil MENU_UTIL;
     private static RealmManager REALM_MANAGER;
+    private static FloodControl FLOOD_CONTROL;
+    private static PartyManager PARTY_MANAGER;
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
     }
@@ -91,5 +94,13 @@ public class GameApi {
 
     public static RealmManager getRealmManager() {
         return REALM_MANAGER;
+    }
+
+    public static FloodControl getFloodControl() {
+        return FLOOD_CONTROL;
+    }
+
+    public static PartyManager getPartyManager() {
+        return PARTY_MANAGER;
     }
 }

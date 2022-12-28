@@ -1,8 +1,11 @@
 package net.stickmix.game.api.athena;
 
+import com.google.common.collect.Maps;
 import net.stickmix.game.api.athena.util.Athena;
 
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public interface AthenaStorage<T> {
 
@@ -68,14 +71,25 @@ public interface AthenaStorage<T> {
     /**
      * Создать новый пул объектов.
      *
+     * @param source реализация Map.
      * @return пул объектов.
      */
-    ObjectPool<T> newObjectPool();
+    ObjectPool<T> newObjectPool(Map source);
+
+    default ObjectPool<T> newObjectPool() {
+        return newObjectPool(Maps.newTreeMap(String.CASE_INSENSITIVE_ORDER));
+    }
 
     /**
      * Создать новый пул объектов с которого можно только читать объекты.
+     *
+     * @param source реализация Map.
      * @return пул объектов.
      */
-    ReadOnlyObjectPool<T> newReadOnlyObjectPool();
+    ReadOnlyObjectPool<T> newReadOnlyObjectPool(Map source);
+
+    default ReadOnlyObjectPool<T> newReadOnlyObjectPool() {
+        return newReadOnlyObjectPool(Maps.newTreeMap(String.CASE_INSENSITIVE_ORDER));
+    }
 
 }

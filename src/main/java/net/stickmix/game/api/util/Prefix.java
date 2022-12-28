@@ -10,6 +10,7 @@ public class Prefix {
     public static final String PARTY = "Тусовка";
     public static final String PUNISHMENTS = "Наказания";
     public static final String HELP = "Помощь";
+    public static final String PROJECT = "&b&lStick&a&lMix";
 
 
 }
