@@ -74,7 +74,7 @@ public interface AthenaStorage<T> {
      * @param source реализация Map.
      * @return пул объектов.
      */
-    ObjectPool<T> newObjectPool(Map source);
+    ObjectPool<T> newObjectPool(Map<String, T> source);
 
     default ObjectPool<T> newObjectPool() {
         return newObjectPool(Maps.newTreeMap(String.CASE_INSENSITIVE_ORDER));
@@ -86,7 +86,7 @@ public interface AthenaStorage<T> {
      * @param source реализация Map.
      * @return пул объектов.
      */
-    ReadOnlyObjectPool<T> newReadOnlyObjectPool(Map source);
+    ReadOnlyObjectPool<T> newReadOnlyObjectPool(Map<String, T> source);
 
     default ReadOnlyObjectPool<T> newReadOnlyObjectPool() {
         return newReadOnlyObjectPool(Maps.newTreeMap(String.CASE_INSENSITIVE_ORDER));

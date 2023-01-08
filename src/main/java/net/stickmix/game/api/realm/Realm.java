@@ -25,4 +25,11 @@ public interface Realm {
      */
     Collection<User> getOnlineUsers();
 
+    /**
+     * Вывести глобальное сообщение на реалм.
+     * @param message сообщение.
+     * @param args аргументы.
+     */
+    void broadcastMessage(String message, Object... args);
+
 }

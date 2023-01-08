@@ -19,4 +19,18 @@ public interface RealmManager {
      */
     Collection<Realm> getRealms();
 
+    /**
+     * Получить все реалмы айди которых начинается на section.
+     * @param section секция реалмов.
+     * @return секция реалмов.
+     */
+    Collection<Realm> getRealmSection(String section);
+
+    /**
+     * Вывести глобальное сообщение на секции реалмов.
+     * @param section секция реалмов.
+     * @param message сообщение.
+     * @param args аргументы.
+     */
+    void broadcastMessageToRealmSection(String section, String message, Object... args);
 }

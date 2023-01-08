@@ -1,6 +1,13 @@
 package net.stickmix.game.api.util;
 
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+
+import java.util.List;
 
 public class ChatUtil {
 
@@ -45,5 +52,36 @@ public class ChatUtil {
         String message = yes ? trueText : falseText;
         return color + message;
     }
+
+    public static HoverEvent makeHoverEvent(List<String> lore) {
+        BaseComponent[] comps = new BaseComponent[lore.size()];
+        for (int i = 0; i < lore.size(); ++i) {
+            comps[i] = new TextComponent(colorize("%s%s", lore.get(i), i == lore.size() - 1 ? "" : "\n"));
+        }
+        return new HoverEvent(HoverEvent.Action.SHOW_TEXT, comps);
+    }
+
+    public static TextComponent makeTextComponentUncolored(String text) {
+        return new TextComponent(TextComponent.fromLegacyText(text));
+    }
+
+    public static TextComponent makeTextComponent(String text) {
+        return makeTextComponentUncolored(colorize(text));
+    }
+
+    public static TextComponent makeTextComponent(String text, Object... args) {
+        return makeTextComponentUncolored(colorize(text, args));
+    }
+
+    public static void sendClickableMessage(Player player, String msg, List<String> lore, String command) {
+        TextComponent component = makeTextComponent(msg);
+        if (lore != null) {
+            HoverEvent event = makeHoverEvent(lore);
+            component.setHoverEvent(event);
+        }
+        component.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
+        player.spigot().sendMessage(component);
+    }
+
 
 }
