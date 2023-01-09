@@ -33,4 +33,10 @@ public interface RealmManager {
      * @param args аргументы.
      */
     void broadcastMessageToRealmSection(String section, String message, Object... args);
+
+    /**
+     * Получить текущий реалм.
+     * @return текущий реалм.
+     */
+    Realm getCurrentRealm();
 }
