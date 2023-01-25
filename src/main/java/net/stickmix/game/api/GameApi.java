@@ -8,6 +8,7 @@ import net.stickmix.game.api.donate.DonateManager;
 import net.stickmix.game.api.economy.Economy;
 import net.stickmix.game.api.entity.logic.EntityLogicBuilder;
 import net.stickmix.game.api.entity.logic.EntityLogicHelper;
+import net.stickmix.game.api.logger.TelegramLogger;
 import net.stickmix.game.api.menu.MenuUtil;
 import net.stickmix.game.api.minigame.MinigameSettings;
 import net.stickmix.game.api.party.PartyManager;
@@ -36,6 +37,7 @@ public class GameApi {
     private static FloodControl FLOOD_CONTROL;
     private static PartyManager PARTY_MANAGER;
     private static DonateManager DONATE_MANAGER;
+    private static TelegramLogger TELEGRAM_LOGGER;
 
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
@@ -109,5 +111,9 @@ public class GameApi {
 
     public static DonateManager getDonateManager() {
         return DONATE_MANAGER;
+    }
+
+    public static TelegramLogger getTelegramLogger() {
+        return TELEGRAM_LOGGER;
     }
 }
