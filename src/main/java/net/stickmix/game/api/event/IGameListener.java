@@ -6,4 +6,5 @@ package net.stickmix.game.api.event;
  * этот интерфейс, но также зарегистрировать его в GameEventManager'е.
  * Created by RINES on 03.06.2018.
  */
-public interface IGameListener {}
+public interface IGameListener {
+}

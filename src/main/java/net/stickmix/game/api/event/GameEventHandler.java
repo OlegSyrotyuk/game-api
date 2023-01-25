@@ -12,12 +12,14 @@ public @interface GameEventHandler {
     /**
      * Приоритет исполнения.
      * Считается от Byte.MIN_VALUE до Byte.MAX_VALUE (не нужно использовать минимальное значение, оно системное).
+     *
      * @return приоритет исполнения.
      */
     byte priority() default 0;
 
     /**
      * Показатель того, нужно ли обрабатывать это событие, если один из предыдущих обработчиков пометил его, как отмененное.
+     *
      * @return true/false.
      */
     boolean ignoreCancelled() default true;

@@ -18,7 +18,7 @@ public interface BossBar extends org.bukkit.boss.BossBar {
      * Установить имя босс-бару.
      *
      * @param title имя босс-бара.
-     * @param args аргументы форматирования.
+     * @param args  аргументы форматирования.
      */
     default void setTitle(String title, Object... args) {
         setTitle(String.format(title, args));
@@ -63,12 +63,13 @@ public interface BossBar extends org.bukkit.boss.BossBar {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    default int getTimeLeft(){
+    default int getTimeLeft() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /**
      * Получить локализованное имя босс-бара.
+     *
      * @return локализованное имя босс-бара.
      */
     String getLocalizedTitle();

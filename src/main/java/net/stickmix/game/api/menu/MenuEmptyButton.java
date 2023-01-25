@@ -14,8 +14,9 @@ public class MenuEmptyButton extends MenuButton {
 
     /**
      * Создать пустую кнопку для меню с указанным материалом, названием и описанием.
-     * @param icon материал.
-     * @param name названием (цветовые коды будут заменены).
+     *
+     * @param icon        материал.
+     * @param name        названием (цветовые коды будут заменены).
      * @param description построчное описание (цветовые коды будут заменены).
      */
     public MenuEmptyButton(Material icon, String name, List<String> description) {
@@ -24,9 +25,10 @@ public class MenuEmptyButton extends MenuButton {
 
     /**
      * Создать пустую кнопку для меню с указанным материалом, датой материала, названием и описанием.
-     * @param icon материал.
-     * @param data дата материала (например, 0-15 у шерсти).
-     * @param name названием (цветовые коды будут заменены).
+     *
+     * @param icon        материал.
+     * @param data        дата материала (например, 0-15 у шерсти).
+     * @param name        названием (цветовые коды будут заменены).
      * @param description построчное описание (цветовые коды будут заменены).
      */
     public MenuEmptyButton(Material icon, int data, String name, List<String> description) {
@@ -35,6 +37,7 @@ public class MenuEmptyButton extends MenuButton {
 
     /**
      * Поддержка базового конструктора.
+     *
      * @param itemStack иконка кнопки для меню.
      */
     public MenuEmptyButton(ItemStack itemStack) {

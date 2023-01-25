@@ -4,6 +4,7 @@ public interface PartyManager {
 
     /**
      * Получить тусовку по айди.
+     *
      * @param id айди тусовки.
      * @return тусовка.
      */
@@ -11,6 +12,7 @@ public interface PartyManager {
 
     /**
      * Получить тусовку по её участнику.
+     *
      * @param member имя участника.
      * @return объект тусовки или null.
      */
@@ -18,7 +20,8 @@ public interface PartyManager {
 
     /**
      * Проверить являются ли пользователи участниками одной тусовки.
-     * @param firstMember имя первого пользователя.
+     *
+     * @param firstMember  имя первого пользователя.
      * @param secondMember имя второго пользователя.
      * @return результат.
      */

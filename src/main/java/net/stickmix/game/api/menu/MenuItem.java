@@ -4,12 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
+
 public abstract class MenuItem {
 
     private ItemStack icon;
 
     /**
      * Создать кликабельный предмет для меню.
+     *
      * @param icon отображаемая иконка.
      */
     public MenuItem(ItemStack icon) {
@@ -26,14 +28,16 @@ public abstract class MenuItem {
 
     /**
      * Действие, которое должно происходить при клике на этот предмет в меню.
-     * @param player игрок, который кликнул.
+     *
+     * @param player    игрок, который кликнул.
      * @param clickType тип клика.
-     * @param slot слот, на котором этот предмет находится в меню.
+     * @param slot      слот, на котором этот предмет находится в меню.
      */
     public abstract void onClick(Player player, ClickType clickType, int slot);
 
     /**
      * Получить иконку этого предмета, которую можно изменять.
+     *
      * @return иконка этого предмета, которую можно изменять.
      */
     public ItemStack getIconModifiable() {
@@ -42,6 +46,7 @@ public abstract class MenuItem {
 
     /**
      * Получить иконку этого предмета, которую нельзя изменять.
+     *
      * @return иконка этого предмета, которую нельзя изменять.
      */
     public ItemStack getIcon() {
@@ -51,6 +56,7 @@ public abstract class MenuItem {
     /**
      * Установить этому предмету новую иконку.
      * Не забудьте обновить ее во всех меню, в которых находится этот предмет!
+     *
      * @param icon новая иконка.
      */
     public void setIcon(ItemStack icon) {

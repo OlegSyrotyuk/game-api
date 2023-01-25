@@ -17,6 +17,7 @@ public class GameCancellableEvent extends GameEvent {
 
     /**
      * Повлиять на отмененность события.
+     *
      * @param value true/false.
      */
     public void setCancelled(boolean value) {
@@ -25,6 +26,7 @@ public class GameCancellableEvent extends GameEvent {
 
     /**
      * Проверка на то, было ли отменено это событие одним из его обработчиков.
+     *
      * @return true/false.
      */
     public boolean isCancelled() {

@@ -19,6 +19,7 @@ public class GameItemStackMeta {
     final Map<Enchantment, Integer> enchantments = new HashMap<>();
     final Set<ItemFlag> flags = EnumSet.noneOf(ItemFlag.class);
 
-    GameItemStackMeta() {}
+    GameItemStackMeta() {
+    }
 
 }

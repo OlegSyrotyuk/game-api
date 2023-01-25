@@ -11,14 +11,16 @@ public interface ScoreBoardUtil {
 
     /**
      * Включить на постоянной основе авто-обновление названия скорборда с указанной гаммой анимации.
+     *
      * @param gamma гамма анимаци.
      */
     void enableTitleAnimationGamma(String title, AnimationGamma gamma);
 
     /**
      * Создать скорборд с заданным названием/обновить его название для указанного игрока.
+     *
      * @param player игрок.
-     * @param title название скорборда (цветовые коды автоматически заменятся).
+     * @param title  название скорборда (цветовые коды автоматически заменятся).
      */
     default void updateTitle(Player player, String title) {
         updateTitle(Collections.singleton(player), title);
@@ -26,9 +28,10 @@ public interface ScoreBoardUtil {
 
     /**
      * Создать скорборд с заданным названием/обновить его название для указанного игрока.
+     *
      * @param player игрок.
-     * @param title название скорборда (цветовые коды автоматически заменятся).
-     * @param args аргументы форматирования текста строки.
+     * @param title  название скорборда (цветовые коды автоматически заменятся).
+     * @param args   аргументы форматирования текста строки.
      */
     default void updateTitle(Player player, String title, Object... args) {
         updateTitle(player, String.format(title, args));
@@ -36,16 +39,18 @@ public interface ScoreBoardUtil {
 
     /**
      * Создать скорборд с заданным названием/обновить его название для указанных игроков.
+     *
      * @param players игроки.
-     * @param title название скорборда (цветовые коды автоматически заменятся).
+     * @param title   название скорборда (цветовые коды автоматически заменятся).
      */
     void updateTitle(Collection<Player> players, String title);
 
     /**
      * Создать скорборд с заданным названием/обновить его название для указанных игроков.
+     *
      * @param players игроки.
-     * @param title название скорборда (цветовые коды автоматически заменятся).
-     * @param args аргументы форматирования текста строки.
+     * @param title   название скорборда (цветовые коды автоматически заменятся).
+     * @param args    аргументы форматирования текста строки.
      */
     default void updateTitle(Collection<Player> players, String title, Object... args) {
         updateTitle(players, String.format(title, args));
@@ -53,9 +58,10 @@ public interface ScoreBoardUtil {
 
     /**
      * Отправить указанному игроку строчку в скорборде.
-     * @param player игрок.
+     *
+     * @param player   игрок.
      * @param priority номер строки (1-16 включительно).
-     * @param text текст строки (цветовые коды автоматически заменятся).
+     * @param text     текст строки (цветовые коды автоматически заменятся).
      */
     default void send(Player player, int priority, String text) {
         send(Collections.singleton(player), priority, text);
@@ -63,10 +69,11 @@ public interface ScoreBoardUtil {
 
     /**
      * Отправить указанному игроку строчку в скорборде.
-     * @param player игрок.
+     *
+     * @param player   игрок.
      * @param priority номер строки (1-16 включительно).
-     * @param text текст строки (цветовые коды автоматически заменятся).
-     * @param args аргументы форматирования текста строки.
+     * @param text     текст строки (цветовые коды автоматически заменятся).
+     * @param args     аргументы форматирования текста строки.
      */
     default void send(Player player, int priority, String text, Object... args) {
         send(player, priority, String.format(text, args));
@@ -74,8 +81,9 @@ public interface ScoreBoardUtil {
 
     /**
      * Отправить указанному игроку список из указанных строк в скорборде.
+     *
      * @param player игрок.
-     * @param text строки текста.
+     * @param text   строки текста.
      */
     default void send(Player player, List<String> text) {
         removeAll(player);
@@ -86,18 +94,20 @@ public interface ScoreBoardUtil {
 
     /**
      * Отправить указанным игрокам строчку в скорборде.
-     * @param players игроки.
+     *
+     * @param players  игроки.
      * @param priority номер строки (1-16 включительно).
-     * @param text текст строки (цветовые коды автоматически заменятся).
+     * @param text     текст строки (цветовые коды автоматически заменятся).
      */
     void send(Collection<Player> players, int priority, String text);
 
     /**
      * Отправить указанным игрокам строчку в скорборде.
-     * @param players игроки.
+     *
+     * @param players  игроки.
      * @param priority номер строки (1-16 включительно).
-     * @param text текст строки (цветовые коды автоматически заменятся).
-     * @param args аргументы форматирования текста строки.
+     * @param text     текст строки (цветовые коды автоматически заменятся).
+     * @param args     аргументы форматирования текста строки.
      */
     default void send(Collection<Player> players, int priority, String text, Object... args) {
         send(players, priority, String.format(text, args));
@@ -105,7 +115,8 @@ public interface ScoreBoardUtil {
 
     /**
      * Удалить у указанного игрока строку с определенным номером.
-     * @param player игрок.
+     *
+     * @param player   игрок.
      * @param priority номер строки (1-16 включительно).
      */
     default void remove(Player player, int priority) {
@@ -114,13 +125,15 @@ public interface ScoreBoardUtil {
 
     /**
      * Удалить у указанных игроков строку с определенным номером.
-     * @param players игроки.
+     *
+     * @param players  игроки.
      * @param priority номер строки (1-16 включительно).
      */
     void remove(Collection<Player> players, int priority);
 
     /**
      * Удалить у указанного игрока все строки из скорборда.
+     *
      * @param player игрок.
      */
     default void removeAll(Player player) {
@@ -129,6 +142,7 @@ public interface ScoreBoardUtil {
 
     /**
      * Удалить у указанных игроков все строки из скорборда.
+     *
      * @param players игроки.
      */
     void removeAll(Collection<Player> players);

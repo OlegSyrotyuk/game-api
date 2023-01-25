@@ -5,7 +5,6 @@ import net.stickmix.game.api.athena.util.Athena;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public interface AthenaStorage<T> {
 

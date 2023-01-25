@@ -11,24 +11,28 @@ public interface TabTeam {
 
     /**
      * Получить название команды.
+     *
      * @return название команды.
      */
     String getName();
 
     /**
      * Получить приоритет команды.
+     *
      * @return приоритет команды.
      */
     char getPriority();
 
     /**
      * Получить префикс команды (с заменой & на цветовой код).
+     *
      * @return префикс команды.
      */
     String getPrefix();
 
     /**
      * Установить новый префикс команды (с заменой & на цветовой код).
+     *
      * @param prefix новый префикс команды.
      */
     default void setPrefix(String prefix) {
@@ -37,12 +41,14 @@ public interface TabTeam {
 
     /**
      * Получить суффикс команды (с заменой & на цветовой код).
+     *
      * @return суффикс команды.
      */
     String getSuffix();
 
     /**
      * Установить новый суффикс команды (с заменой & на цветовой код).
+     *
      * @param suffix новый суффикс команды.
      */
     default void setSuffix(String suffix) {
@@ -51,6 +57,7 @@ public interface TabTeam {
 
     /**
      * Установить новые префикс и суффикс команды (с заменой & на цветовой код).
+     *
      * @param prefix новый префикс команды.
      * @param suffix новый суффикс команды.
      */
@@ -59,6 +66,7 @@ public interface TabTeam {
     /**
      * Получить игроков в команде.
      * Этот метод в своей логике сложнее, чем getPlayerNames.
+     *
      * @return игроки этой команды.
      */
     Collection<Player> getPlayers();
@@ -66,6 +74,7 @@ public interface TabTeam {
     /**
      * Получить ники игроков в команде.
      * Этот метод в своей логике проще, чем getPlayers.
+     *
      * @return ники игроков этой команды.
      */
     Collection<String> getPlayerNames();
@@ -78,6 +87,7 @@ public interface TabTeam {
 
     /**
      * Создать команду для указанных игроков.
+     *
      * @param players игроки.
      */
     default void createForPlayers(Collection<Player> players) {
@@ -86,6 +96,7 @@ public interface TabTeam {
 
     /**
      * Создать команду для указанных игроков.
+     *
      * @param playerNames ники игроков.
      */
     void create(Collection<String> playerNames);
@@ -97,6 +108,7 @@ public interface TabTeam {
 
     /**
      * Удалить команду для указанных игроков.
+     *
      * @param players игроки.
      */
     default void deleteForPlayers(Collection<Player> players) {
@@ -105,6 +117,7 @@ public interface TabTeam {
 
     /**
      * Удалить команду для указанных игроков.
+     *
      * @param playerNames ники игроков.
      */
     void delete(Collection<String> playerNames);
@@ -116,6 +129,7 @@ public interface TabTeam {
      * поэтому важно помнить, чтобы для одного и того же игрока не существовало двух разных команд,
      * в которых состоит один и тот же игрок, иначе будет непредсказуемое поведение.
      * Важно: добавление игрока в команду не означает, что она создана для него.
+     *
      * @param player игрок.
      */
     default void addPlayer(Player player) {
@@ -129,6 +143,7 @@ public interface TabTeam {
      * поэтому важно помнить, чтобы для одного и того же игрока не существовало двух разных команд,
      * в которых состоит один и тот же игрок, иначе будет непредсказуемое поведение.
      * Важно: добавление игрока в команду не означает, что она создана для него.
+     *
      * @param playerName ник игрока.
      */
     default void addPlayer(String playerName) {
@@ -142,6 +157,7 @@ public interface TabTeam {
      * поэтому важно помнить, чтобы для одного и того же игрока не существовало двух разных команд,
      * в которых состоит один и тот же игрок, иначе будет непредсказуемое поведение.
      * Важно: добавление игрока в команду не означает, что она создана для него.
+     *
      * @param playerNames ники игроков.
      */
     void addPlayers(Collection<String> playerNames);
@@ -151,6 +167,7 @@ public interface TabTeam {
      * Если он в ней не состоит, ничего не произойдет.
      * Удаление игрока из команды не означает, что команда перестанет для него существовать,
      * то есть он все еще сможет видеть других членов этой команды.
+     *
      * @param player игрок.
      */
     default void removePlayer(Player player) {
@@ -162,6 +179,7 @@ public interface TabTeam {
      * Если он в ней не состоит, ничего не произойдет.
      * Удаление игрока из команды не означает, что команда перестанет для него существовать,
      * то есть он все еще сможет видеть других членов этой команды.
+     *
      * @param playerName ник игрока.
      */
     default void removePlayer(String playerName) {
@@ -173,6 +191,7 @@ public interface TabTeam {
      * Если он в ней не состоит, ничего не произойдет.
      * Удаление игрока из команды не означает, что команда перестанет для него существовать,
      * то есть он все еще сможет видеть других членов этой команды.
+     *
      * @param playerNames ники игроков.
      */
     void removePlayers(Collection<String> playerNames);
@@ -181,15 +200,17 @@ public interface TabTeam {
      * Сделать команду авто-видимой.
      * Это значит, что она будет автоматически создаваться для заходящих на сервер игроков
      * и автоматически удаляться для выходящих с сервера игроков.
+     *
      * @param value true/false.
      * @throws IllegalStateException если value = true и она уже авто-видимая или если
-     * value = false и она и так не является авто-видимой.
+     *                               value = false и она и так не является авто-видимой.
      */
     void setAutoVisible(boolean value) throws IllegalStateException;
 
     /**
      * Установить форсированное имя команды для передачи в пакетах на клиенты игроков.
      * Отвечает за местоположение в топе и другие вещи.
+     *
      * @param name название.
      * @throws IllegalStateException если переданный аргумент null, пустой или длиннее 16 символов.
      */

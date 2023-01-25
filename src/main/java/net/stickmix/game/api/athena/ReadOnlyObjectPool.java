@@ -11,10 +11,12 @@ public interface ReadOnlyObjectPool<T> {
      * @param id айди объекта.
      * @return объект.
      */
-    @Nullable T get(String id);
+    @Nullable
+    T get(String id);
 
     /**
      * Убрать объект из кэша.
+     *
      * @param id айди объекта.
      */
     void invalidate(String id);

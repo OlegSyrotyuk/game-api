@@ -8,6 +8,7 @@ public interface Realm {
 
     /**
      * Получить айди реалма.
+     *
      * @return айди реалма.
      */
     String getId();
@@ -21,14 +22,23 @@ public interface Realm {
 
     /**
      * Получить всех пользователей на данном реалме.
+     *
      * @return коллекция пользователей.
      */
     Collection<User> getOnlineUsers();
 
     /**
+     * Получить имена всех пользователей на данном реалме.
+     *
+     * @return коллекция пользователей.
+     */
+    Collection<String> getOnlineUserNames();
+
+    /**
      * Вывести глобальное сообщение на реалм.
+     *
      * @param message сообщение.
-     * @param args аргументы.
+     * @param args    аргументы.
      */
     void broadcastMessage(String message, Object... args);
 

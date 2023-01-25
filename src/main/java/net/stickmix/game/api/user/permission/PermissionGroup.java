@@ -24,6 +24,7 @@ public enum PermissionGroup {
     HELPER(38, "&a&lМл. Модератор", "&a&lJr. MOD ", '5'),
     MODERATOR(39, "&a&lМодератор", "&a&lMOD ", '4'),
     SENIOR_MODERATOR(40, "&2&lСт. Модератор", "&2&lSr. MOD ", '3'),
+    DESIGN(43, "&3&lДизайнер", "&3&lDESIGN ", '3'),
     DEVELOPER(45, "&9&lРазработчик", "&9&lDEV ", '2'),
     ADMINISTRATOR(50, "&c&lАдминистратор", "&c&lADM ", '1'),
     HEAD_ADMIN(100, "&4&lГл. Администратор", "&4&lHEAD ADM ", '0');
@@ -34,7 +35,7 @@ public enum PermissionGroup {
     private final char priority;
 
     public boolean isStaff() {
-        return getRank() >= BUILDER.getRank();
+        return getRank() >= MEDIA.getRank();
     }
 
 

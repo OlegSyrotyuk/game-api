@@ -12,5 +12,4 @@ public class Prefix {
     public static final String HELP = "Помощь";
     public static final String PROJECT = "&b&lStick&a&lMix";
 
-
 }

@@ -8,6 +8,7 @@ public interface UserManager {
 
     /**
      * Получить пользователя по его имени.
+     *
      * @param name имя пользователя.
      * @return пользователь.
      */
@@ -19,6 +20,7 @@ public interface UserManager {
 
     /**
      * Удалить пользователя из кэша если он оффлайн на этом сервере.
+     *
      * @param name имя пользователя.
      */
     void invalidateIfOffline(String name);
@@ -34,7 +36,8 @@ public interface UserManager {
     /**
      * Метод получит объект пользователя и выполнит действие описанное в userConsumer.
      * Если пользователь оффлайн, то будет выполнен метод invalidateIfOffline.
-     * @param name имя пользователя.
+     *
+     * @param name         имя пользователя.
      * @param userConsumer действие которое необходимо выполнить.
      */
     default void getUserDoAndInvalidateIfOffline(String name, Consumer<User> userConsumer) {
@@ -47,9 +50,9 @@ public interface UserManager {
     }
 
     /**
-     * @see UserManager#getUserDoAndInvalidateIfOffline(String, Consumer)
-     * @param player bukkit игрок.
+     * @param player       bukkit игрок.
      * @param userConsumer действие которое необходимо выполнить.
+     * @see UserManager#getUserDoAndInvalidateIfOffline(String, Consumer)
      */
     default void getUserDoAndInvalidateIfOffline(Player player, Consumer<User> userConsumer) {
         getUserDoAndInvalidateIfOffline(player.getName(), userConsumer);

@@ -4,6 +4,7 @@ public interface PhantomEntityAnimations {
 
     /**
      * Показать от лица этой сущности анимацию с указанным ID.
+     *
      * @param animationID ID анимации.
      */
     void playAnimation(int animationID);

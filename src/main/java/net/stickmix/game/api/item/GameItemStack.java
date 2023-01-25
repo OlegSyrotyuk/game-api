@@ -17,10 +17,11 @@ public class GameItemStack extends ItemStack {
     /**
      * Создать новый ItemStack с указанным материалом, именем, описанием и метой.
      * Количество предметов в стаке будет равным 1.
-     * @param material материал.
-     * @param name имя (цветовые коды будут заменены).
+     *
+     * @param material    материал.
+     * @param name        имя (цветовые коды будут заменены).
      * @param description построчное описание (цветовые коды будут заменены).
-     * @param meta мета предмета. Создается через DmsItemStackMetaBuilder.
+     * @param meta        мета предмета. Создается через DmsItemStackMetaBuilder.
      */
     public GameItemStack(Material material, String name, List<String> description, GameItemStackMeta meta) {
         this(material, 1, name, description, meta);
@@ -29,9 +30,10 @@ public class GameItemStack extends ItemStack {
     /**
      * Создать новый ItemStack с указанным материалом, именем и количеством.
      * Описание предмета будет пустым.
+     *
      * @param material материал.
-     * @param name имя (цветовые коды будут заменены).
-     * @param amount количество предмета.
+     * @param name     имя (цветовые коды будут заменены).
+     * @param amount   количество предмета.
      */
     public GameItemStack(Material material, int amount, String name) {
         this(material, amount, name, Collections.emptyList(), null);
@@ -40,8 +42,9 @@ public class GameItemStack extends ItemStack {
     /**
      * Создать новый ItemStack с указанным материалом и именем.
      * Количество предмета в стаке будет равным 1. Описание будет пустым.
+     *
      * @param material материал.
-     * @param name имя (цветовые коды будут заменены).
+     * @param name     имя (цветовые коды будут заменены).
      */
     public GameItemStack(Material material, String name) {
         this(material, name, Collections.emptyList());
@@ -50,8 +53,9 @@ public class GameItemStack extends ItemStack {
     /**
      * Создать новый ItemStack с указанным материалом, именем и описанием.
      * Количество предмета в стаке будет равным 1.
-     * @param material материал.
-     * @param name имя (цветовые коды будут заменены).
+     *
+     * @param material    материал.
+     * @param name        имя (цветовые коды будут заменены).
      * @param description построчное описание (цветовые коды будут заменены).
      */
     public GameItemStack(Material material, String name, List<String> description) {
@@ -61,9 +65,10 @@ public class GameItemStack extends ItemStack {
     /**
      * Создать новый ItemStack с указанным материалом, именем и метой.
      * Количество предмета в стаке будет равным 1. Описание будет пустым.
+     *
      * @param material материал.
-     * @param name имя (цветовые коды будут заменены).
-     * @param meta мета предмета. Создается через DmsItemStackMetaBuilder.
+     * @param name     имя (цветовые коды будут заменены).
+     * @param meta     мета предмета. Создается через DmsItemStackMetaBuilder.
      */
     public GameItemStack(Material material, String name, GameItemStackMeta meta) {
         this(material, name, Collections.emptyList(), meta);
@@ -71,11 +76,12 @@ public class GameItemStack extends ItemStack {
 
     /**
      * Создать новый ItemStack с указанным материалом, именем, описанием и метой.
-     * @param material материал.
-     * @param name имя (цветовые коды будут заменены).
-     * @param amount количество предмета.
+     *
+     * @param material    материал.
+     * @param name        имя (цветовые коды будут заменены).
+     * @param amount      количество предмета.
      * @param description построчное описание (цветовые коды будут заменены).
-     * @param meta мета предмета. Создается через DmsItemStackMetaBuilder.
+     * @param meta        мета предмета. Создается через DmsItemStackMetaBuilder.
      */
     public GameItemStack(Material material, int amount, String name, List<String> description, GameItemStackMeta meta) {
         super(material, amount);
@@ -111,6 +117,7 @@ public class GameItemStack extends ItemStack {
 
     /**
      * Применить указанные флаги к этому предмету.
+     *
      * @param flags флаги.
      * @return этот предмет.
      */
@@ -123,6 +130,7 @@ public class GameItemStack extends ItemStack {
 
     /**
      * Установить неразрушимость этого предмета.
+     *
      * @param value неразрушим = true/разрушим = false.
      * @return этот предмет.
      */

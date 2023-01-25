@@ -4,6 +4,7 @@ import net.stickmix.game.api.annotation.NotImplement;
 import net.stickmix.game.api.athena.StorageManager;
 import net.stickmix.game.api.bar.Bar;
 import net.stickmix.game.api.command.CommandManager;
+import net.stickmix.game.api.donate.DonateManager;
 import net.stickmix.game.api.economy.Economy;
 import net.stickmix.game.api.entity.logic.EntityLogicBuilder;
 import net.stickmix.game.api.entity.logic.EntityLogicHelper;
@@ -34,6 +35,8 @@ public class GameApi {
     private static RealmManager REALM_MANAGER;
     private static FloodControl FLOOD_CONTROL;
     private static PartyManager PARTY_MANAGER;
+    private static DonateManager DONATE_MANAGER;
+
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
     }
@@ -102,5 +105,9 @@ public class GameApi {
 
     public static PartyManager getPartyManager() {
         return PARTY_MANAGER;
+    }
+
+    public static DonateManager getDonateManager() {
+        return DONATE_MANAGER;
     }
 }

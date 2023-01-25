@@ -44,6 +44,7 @@ public interface ObjectPool<T> {
 
     /**
      * Убрать объект из кэша.
+     *
      * @param id айди объекта.
      */
     void invalidate(String id);

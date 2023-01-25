@@ -21,6 +21,7 @@ public interface RealmManager {
 
     /**
      * Получить все реалмы айди которых начинается на section.
+     *
      * @param section секция реалмов.
      * @return секция реалмов.
      */
@@ -28,14 +29,16 @@ public interface RealmManager {
 
     /**
      * Вывести глобальное сообщение на секции реалмов.
+     *
      * @param section секция реалмов.
      * @param message сообщение.
-     * @param args аргументы.
+     * @param args    аргументы.
      */
     void broadcastMessageToRealmSection(String section, String message, Object... args);
 
     /**
      * Получить текущий реалм.
+     *
      * @return текущий реалм.
      */
     Realm getCurrentRealm();
