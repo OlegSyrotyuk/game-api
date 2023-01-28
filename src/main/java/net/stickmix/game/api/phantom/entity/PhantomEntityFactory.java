@@ -30,6 +30,8 @@ public interface PhantomEntityFactory {
      */
     PhantomPlayer createPlayer(UUID uuid, String name, String skinName);
 
+    PhantomPlayer createPlayer(int id, UUID uuid, String name, String skinName);
+
     /**
      * @see PhantomEntityFactory#createPlayer(String, String)
      */
@@ -42,6 +44,10 @@ public interface PhantomEntityFactory {
      */
     default PhantomPlayer createPlayer(String name, String skinName) {
         return createPlayer(UUID.randomUUID(), name, skinName);
+    }
+
+    default PhantomPlayer createPlayer(int id, String name, String skinName) {
+        return createPlayer(id, UUID.randomUUID(), name, skinName);
     }
 
     /**
