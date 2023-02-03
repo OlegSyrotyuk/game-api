@@ -14,5 +14,5 @@ public interface CommandManager {
      *
      * @param parser реализация персера.
      */
-    <T> void registerArgumentParser(ArgumentParser<T> parser);
+    <T> void registerArgumentParser(Class<T> type, ArgumentParser<T> parser);
 }
