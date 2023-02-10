@@ -2,7 +2,9 @@ package net.stickmix.game.api.athena.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import lombok.Getter;
 import net.stickmix.game.api.athena.DataOptions;
+import org.bukkit.inventory.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,5 +26,10 @@ public class Athena {
             .create();
 
     public static final Logger LOGGER = LoggerFactory.getLogger("Athena");
+    @Getter
+    private static final GsonBuilder gsonBuilder = new GsonBuilder()
+            .setFieldNamingStrategy(new AthenaStorageStrategy())
+            .setExclusionStrategies(new AthenaExclusionStrategy())
+            .registerTypeHierarchyAdapter(ItemStack.class, new ItemSerializer());
 
 }
