@@ -3,14 +3,14 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.stickmix</groupId>
+    <groupId>net.villenium</groupId>
     <artifactId>game-api</artifactId>
     <name>GameApi</name>
     <description>Игровое API для платформы Bukkit.</description>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.main.bukkit>net.stickmix.game.api.GameApi</project.main.bukkit>
+        <project.main.bukkit>net.villenium.game.api.GameApi</project.main.bukkit>
         <project.author>0xBukkitCoder</project.author>
     </properties>
     <packaging>jar</packaging>
