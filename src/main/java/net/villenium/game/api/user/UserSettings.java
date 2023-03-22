@@ -72,21 +72,21 @@ public interface UserSettings {
      *
      * @return список пользователей.
      */
-    List<User> getIgnoreList();
+    List<String> getIgnoreList();
 
     /**
      * Добавить пользователя в список игнора.
      *
      * @param user пользователь.
      */
-    void ignoreUser(User user);
+    void ignoreUser(String user);
 
     /**
      * Убрать пользователя из списка игнора.
      *
      * @param user пользователь.
      */
-    void unignoreUser(User user);
+    void unignoreUser(String user);
 
     /**
      * Сохранить изменения персонализации.

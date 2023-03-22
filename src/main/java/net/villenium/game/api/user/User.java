@@ -1,5 +1,6 @@
 package net.villenium.game.api.user;
 
+import net.villenium.game.api.annotation.NotImplement;
 import net.villenium.game.api.party.Party;
 import net.villenium.game.api.realm.Realm;
 import net.villenium.game.api.user.permission.PermissionGroup;
@@ -59,6 +60,14 @@ public interface User {
      * @return настройки пользователя.
      */
     UserSettings getSettings();
+
+    /**
+     * Получить класс для работы с уровнем пользователя.
+     *
+     * @return уровень пользователя.
+     */
+    @NotImplement
+    UserNetworkLevel getNetworkLevel();
 
     /**
      * Получить время первого входа пользователя на проект.
