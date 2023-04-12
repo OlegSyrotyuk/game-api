@@ -251,6 +251,14 @@ public interface UserPermission {
      * @return наличие группы.
      * @see UserPermission#hasGroup(PermissionGroup)
      */
+    default boolean isCuratorTester() {
+        return hasGroup(PermissionGroup.ADMINISTRATOR) && hasGroup(PermissionGroup.TESTER);
+    }
+
+    /**
+     * @return наличие группы.
+     * @see UserPermission#hasGroup(PermissionGroup)
+     */
     default boolean isCuratorBuilder() {
         return hasGroup(PermissionGroup.ADMINISTRATOR) && hasGroup(PermissionGroup.BUILDER);
     }
