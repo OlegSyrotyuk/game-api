@@ -8,7 +8,10 @@ import net.villenium.game.api.donate.DonateManager;
 import net.villenium.game.api.economy.Economy;
 import net.villenium.game.api.entity.logic.EntityLogicBuilder;
 import net.villenium.game.api.entity.logic.EntityLogicHelper;
+import net.villenium.game.api.logger.LoggerManager;
 import net.villenium.game.api.logger.TelegramLogger;
+import net.villenium.game.api.logger.discord.DiscordLogger;
+import net.villenium.game.api.logger.discord.DiscordRole;
 import net.villenium.game.api.menu.MenuUtil;
 import net.villenium.game.api.minigame.MinigameSettings;
 import net.villenium.game.api.party.PartyManager;
@@ -38,6 +41,7 @@ public class GameApi {
     private static PartyManager PARTY_MANAGER;
     private static DonateManager DONATE_MANAGER;
     private static TelegramLogger TELEGRAM_LOGGER;
+    private static LoggerManager LOGGER_MANAGER;
 
     public static PhantomEntityFactory getPhantomEntityFactory() {
         return PHANTOM_ENTITY_FACTORY;
@@ -115,5 +119,9 @@ public class GameApi {
 
     public static TelegramLogger getTelegramLogger() {
         return TELEGRAM_LOGGER;
+    }
+
+    public static LoggerManager getLoggerManager() {
+        return LOGGER_MANAGER;
     }
 }
